@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Pavan Kumar R | Portfolio</title>
+  <meta name="description" content="Portfolio of Pavan Kumar R — CSE student at RV College of Engineering. Projects in Web, AI and Cybersecurity.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Pavan Kumar R</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="myphoto.jpg" alt="Pavan Kumar R" class="profile-photo">
+              </div>
+          <div class="hero-text">
+            <h1>Hi, I'm <span class="accent">Pavan</span></h1>
+            <p class="subtitle">CSE Student at RV College of Engineering</p>
+            <p class="tagline">I build for the web, explore AI, and care about cybersecurity.</p>
+            <div class="cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn" href="#contact">Contact Me</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          I'm a Computer Science & Engineering undergraduate (2022–2026) passionate about building practical solutions.
+          My recent work spans a web-based learning platform, an AI-powered parental learning companion, and an
+          AI-driven cybersecurity threat detection system for CAN bus networks.
+        </p>
+      </div>
+    </section>
+
+
+
+
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-header">
+              <h3>Web Based Learning Platform</h3>
+              <span class="stack">JavaScript · CSS · HTML</span>
+            </div>
+            <ul>
+              <li>Developed and managed a comprehensive platform offering diverse courses, interactive quizzes, and chatbot support.</li>
+              <li>Integrated quizzes and assessments to enhance engagement and knowledge retention.</li>
+              <li>Established discussion forums and chatbot functionality for a supportive learning community.</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn small" href="#" aria-disabled="true">GitHub link</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-header">
+              <h3>EduThon: AI-Powered Parental Learning Companion</h3>
+              <span class="stack">Flask · React · Google Gemini</span>
+            </div>
+            <ul>
+              <li>Built an AI-powered platform to help parents teach children via personalized concept explanations with multilingual support and analytics.</li>
+              <li>Backend (Flask) serves AI explanations; frontend (React) includes gamified lessons, quizzes, dashboards, and progress tracking.</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn small" href="https://github.com/pavankumarrcs22/Parental_Guidance_System" aria-disabled="true">GitHub link</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-header">
+              <h3>AI-Powered Cybersecurity Threat Detection System</h3>
+              <span class="stack">Python · TensorFlow · Scikit-learn · Flask/FastAPI</span>
+            </div>
+            <ul>
+              <li>Developed an AI system to detect CAN bus cyberattacks (DoS, Fuzzy, Impersonation) in real time using ML models trained on automotive datasets.</li>
+              <li>Deployed with Flask/FastAPI; integrated real-time CAN monitoring and visualization (Matplotlib, Seaborn) with optional MySQL logging.</li>
+              <li>Designed for future embedded deployment to enhance in-vehicle cybersecurity.</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn small" href="https://github.com/pavankumarrcs22/Cyber_Securtity_Threat_Detection_System" aria-disabled="true">GitHub link</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
+            <p class="error" id="error-name" aria-live="polite"></p>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            <p class="error" id="error-email" aria-live="polite"></p>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+            <p class="error" id="error-message" aria-live="polite"></p>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send</button>
+            <button class="btn" type="reset">Reset</button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <p>© <span id="year"></span> Pavan Kumar R</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-contact">
+            <div class="contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:pavankumar56214@gmail.com">pavankumar56214@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+918951818676">+91 89518 18676</a>
+            </div>
+            <div class="contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              <a href="https://www.linkedin.com/in/pavankumarr2004/" target="_blank" rel="noopener noreferrer">linkedin.com/in/pavankumarr2004/</a>
+            </div>
+            <div class="contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              <a href="https://github.com/pavankumarrcs22" target="_blank" rel="noopener noreferrer">github.com/pavankumarrcs22</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
