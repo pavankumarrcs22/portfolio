@@ -32,6 +32,7 @@ if (copyEmailButton && emailLink) {
 // Contact form handling
 const contactForm = document.querySelector('#contact-form');
 const statusEl = document.querySelector('#form-status');
+const toastEl = document.querySelector('#toast');
 
 function validateEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -43,15 +44,19 @@ function setError(id, message) {
 }
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     setError('name', '');
     setError('email', '');
     setError('message', '');
 
-    const name = document.querySelector('#name').value.trim();
-    const email = document.querySelector('#email').value.trim();
-    const message = document.querySelector('#message').value.trim();
+    const nameInput = document.querySelector('#name');
+    const emailInput = document.querySelector('#email');
+    const messageInput = document.querySelector('#message');
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
 
     let valid = true;
     if (!name) { setError('name', 'Please enter your name.'); valid = false; }
@@ -61,14 +66,32 @@ if (contactForm) {
 
     if (!valid) return;
 
-    const subject = encodeURIComponent('New message from portfolio: ' + name);
-    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+    if (statusEl) statusEl.textContent = 'Sending...';
 
-    if (statusEl) {
-      statusEl.textContent = 'Opening your email app...';
+    // Build form data for FormSubmit
+    const formData = new FormData(contactForm);
+    // Ensure action exists on form
+    const action = contactForm.getAttribute('action') || 'https://formsubmit.co/pavankumar56214@gmail.com';
+
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        if (statusEl) statusEl.textContent = '';
+        showToast('Thanks! Your message has been sent.', 'success');
+      } else {
+        showToast('Sorry, something went wrong. Please try again.', 'error');
+        if (statusEl) statusEl.textContent = '';
+      }
+    } catch (err) {
+      showToast('Network error. Please try again later.', 'error');
+      if (statusEl) statusEl.textContent = '';
     }
-
-    window.location.href = 'mailto:pavankumar56214@gmail.com?subject=' + subject + '&body=' + body;
   });
 }
 
@@ -89,3 +112,17 @@ function copyToClipboard(text) {
     console.error('Failed to copy text: ', err);
   });
 } 
+
+// Toast helper
+function showToast(message, type) {
+  if (!toastEl) return;
+  toastEl.textContent = message;
+  toastEl.className = 'toast ' + (type === 'error' ? 'error' : 'success');
+  // force reflow to restart animation if needed
+  // eslint-disable-next-line no-unused-expressions
+  toastEl.offsetHeight;
+  toastEl.classList.add('show');
+  setTimeout(() => {
+    toastEl.classList.remove('show');
+  }, 3000);
+}

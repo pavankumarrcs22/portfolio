@@ -22,6 +22,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="pavan_kumar_r_1RV22CS136.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -68,6 +69,21 @@
         <h2>Projects</h2>
         
         <div class="projects-grid">
+         
+
+          <article class="project">
+            <div class="project-header">
+              <h3>EduThon: AI-Powered Parental Learning Companion</h3>
+              <span class="stack">Flask · React · Google Gemini</span>
+            </div>
+            <ul>
+              <li>Built an AI-powered platform to help parents teach children via personalized concept explanations with multilingual support and analytics.</li>
+              <li>Backend (Flask) serves AI explanations; frontend (React) includes gamified lessons, quizzes, dashboards, and progress tracking.</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn small" href="https://github.com/pavankumarrcs22/Parental_Guidance_System" aria-disabled="true">GitHub link</a>
+            </div>
+          </article>
           <article class="project">
             <div class="project-header">
               <h3>Web Based Learning Platform</h3>
@@ -85,25 +101,11 @@
 
           <article class="project">
             <div class="project-header">
-              <h3>EduThon: AI-Powered Parental Learning Companion</h3>
-              <span class="stack">Flask · React · Google Gemini</span>
-            </div>
-            <ul>
-              <li>Built an AI-powered platform to help parents teach children via personalized concept explanations with multilingual support and analytics.</li>
-              <li>Backend (Flask) serves AI explanations; frontend (React) includes gamified lessons, quizzes, dashboards, and progress tracking.</li>
-            </ul>
-            <div class="project-links">
-              <a class="btn small" href="https://github.com/pavankumarrcs22/Parental_Guidance_System" aria-disabled="true">GitHub link</a>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-header">
               <h3>AI-Powered Cybersecurity Threat Detection System</h3>
               <span class="stack">Python · TensorFlow · Scikit-learn · Flask/FastAPI</span>
             </div>
             <ul>
-              <li>Developed an AI system to detect CAN bus cyberattacks (DoS, Fuzzy, Impersonation) in real time using ML models trained on automotive datasets.</li>
+              <li>Developed an AI system to detect CAN bus cyberattacks in real time using ML models trained on automotive datasets.</li>
               <li>Deployed with Flask/FastAPI; integrated real-time CAN monitoring and visualization (Matplotlib, Seaborn) with optional MySQL logging.</li>
               <li>Designed for future embedded deployment to enhance in-vehicle cybersecurity.</li>
             </ul>
@@ -121,7 +123,7 @@
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
-        <form id="contact-form" class="contact-form" novalidate>
+        <form id="contact-form" class="contact-form" action="https://formsubmit.co/pavankumar56214@gmail.com" method="POST" novalidate>
           <div class="form-row">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
@@ -137,12 +139,19 @@
             <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
             <p class="error" id="error-message" aria-live="polite"></p>
           </div>
+          <!-- FormSubmit options -->
+          <input type="hidden" name="_subject" value="New message from portfolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <div class="form-actions">
             <button class="btn primary" type="submit">Send</button>
             <button class="btn" type="reset">Reset</button>
           </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
+
+        <!-- Inline toast for success/error messages -->
+        <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
       </div>
     </section>
